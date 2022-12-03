@@ -13,8 +13,7 @@ public class GameWindow extends JFrame {
     private static Image game_over;
     private static float drop_left = 200;
     private static float drop_top = -100;
-    private static float drop_v = 200;
-    private static float wind_v = 50;
+    private static float drop_v = 50;
     private static int count = 0;
     public static void main(String[] args) throws IOException {
         background = ImageIO.read(GameWindow.class.getResourceAsStream("background.png"));
