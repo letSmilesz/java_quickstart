@@ -1,15 +1,21 @@
 import java.util.Scanner;
 
 public class Main {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Your task is quess the number.");
-        int range = 100;
+        for (int i = 10; i <= 100; i += 10) playLevel(i);
+        scanner.close();
+        System.out.println("You are win!");
+    }
+
+    private static void playLevel (int range) {
         int number = (int) (Math.random() * range);
         while (true) {
-            System.out.println("Quess the number from zero to " + range);
+            System.out.println("Guess the number from zero to " + range);
             int answer = scanner.nextInt();
             if (answer == number) {
+                System.out.println("Вы угадали!");
                 break;
             } else if (answer > number) {
                 System.out.println("The entered number is greater than the given number");
@@ -17,7 +23,5 @@ public class Main {
                 System.out.println("The entered number is less than the given number");
             }
         }
-        System.out.println("Вы угадали!");
-        scanner.close();
     }
 }
